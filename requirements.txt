@@ -1,0 +1,8 @@
+ffpyplayer
+openai-whisper
+ffmpeg-python
+pytube
+ffmpeg
+nltk
+google-generativeai
+python-dotenv 
