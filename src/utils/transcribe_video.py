@@ -6,6 +6,8 @@ from src.utils.cache import check_cache
 
 def transcribe_audio(file_path, filename):
 
+    logging.info("Video Transcirption Started")
+
     if check_cache(folder="src/data/transcription", filename=filename):
         return 
 

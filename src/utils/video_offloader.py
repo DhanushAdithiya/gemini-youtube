@@ -7,10 +7,14 @@ from src.utils.cache import check_cache
 
 
 def offload_video(url):
+    logging.info("Video Offloading Started")
+    
     yt = YouTube(url)
     title = (yt.title).translate(str.maketrans("", "", string.punctuation)).lower()
 
     if check_cache(folder="src/data/video/", filename=title):
+        return title
+    elif check_cache(folder= "src/data/transcription", filename = title):
         return title
 
     video_url = yt.streams.all()[0].url
@@ -23,6 +27,5 @@ def offload_video(url):
     with open(f"src/data/video/{title}.mp3", "wb+") as f:
         f.write(audio)
 
-
-    logging.info("Video Sucessfully Downloaded ✅")
+    logging.info("Video Sucessfully Offloaded ✅")
     return title
