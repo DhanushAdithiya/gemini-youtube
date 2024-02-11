@@ -6,3 +6,4 @@ ffmpeg
 nltk
 google-generativeai
 python-dotenv 
+pyyaml
